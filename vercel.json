@@ -1,0 +1,44 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/favicon.ico",
+      "dest": "/favicon.ico"
+    },
+    {
+      "src": "/buri/(.*)",
+      "dest": "/buri/$1"
+    },
+    {
+      "src": "/flatter/(.*)",
+      "dest": "/flatter/$1"
+    },
+    {
+      "src": "/foody/(.*)",
+      "dest": "/foody/$1"
+    },
+    {
+      "src": "/kusina/(.*)",
+      "dest": "/kusina/$1"
+    },
+    {
+      "src": "/tasteit/(.*)",
+      "dest": "/tasteit/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/server.js"
+    }
+  ],
+  "functions": {
+    "server.js": {
+      "maxDuration": 30
+    }
+  }
+} 

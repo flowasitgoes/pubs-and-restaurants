@@ -11,6 +11,14 @@ app.use('/foody', express.static(path.join(__dirname, 'foody-master')));
 app.use('/kusina', express.static(path.join(__dirname, 'kusina-master')));
 app.use('/tasteit', express.static(path.join(__dirname, 'tasteit-master')));
 
+// 处理 favicon.ico 请求
+app.get('/favicon.ico', (req, res) => {
+    res.status(204).end(); // 返回无内容状态码
+});
+
+// 设置 public 文件夹为静态资源目录
+app.use(express.static(path.join(__dirname, 'public')));
+
 // 主页路由，显示所有可用的模板
 app.get('/', (req, res) => {
     const html = `
