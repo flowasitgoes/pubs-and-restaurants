@@ -4,12 +4,15 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3009;
 
-// 设置静态文件中间件，为每个模板文件夹配置不同的路由
-app.use('/buri', express.static(path.join(__dirname, 'public/buri-master')));
-app.use('/flatter', express.static(path.join(__dirname, 'public/flatter-master')));
-app.use('/foody', express.static(path.join(__dirname, 'public/foody-master')));
-app.use('/kusina', express.static(path.join(__dirname, 'public/kusina-master')));
-app.use('/tasteit', express.static(path.join(__dirname, 'public/tasteit-master')));
+// 在Vercel環境中，靜態文件會自動處理
+// 在本地開發環境中，設置靜態文件中間件
+if (process.env.NODE_ENV !== 'production') {
+    app.use('/buri', express.static(path.join(__dirname, 'public/buri-master')));
+    app.use('/flatter', express.static(path.join(__dirname, 'public/flatter-master')));
+    app.use('/foody', express.static(path.join(__dirname, 'public/foody-master')));
+    app.use('/kusina', express.static(path.join(__dirname, 'public/kusina-master')));
+    app.use('/tasteit', express.static(path.join(__dirname, 'public/tasteit-master')));
+}
 
 // 主页路由，显示所有可用的模板
 app.get('/', (req, res) => {
@@ -42,7 +45,7 @@ app.get('/', (req, res) => {
                 margin-bottom: 30px;
                 font-size: 2.5em;
             }
-            .templates-grid {
+            .temㄕplates-grid {
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
                 gap: 20px;

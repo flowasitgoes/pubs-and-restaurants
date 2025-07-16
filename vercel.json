@@ -6,50 +6,46 @@
       "use": "@vercel/node"
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/buri/(.*)",
-      "dest": "/public/buri-master/$1"
+      "source": "/buri",
+      "destination": "/public/buri-master/index.html"
     },
     {
-      "src": "/flatter/(.*)",
-      "dest": "/public/flatter-master/$1"
+      "source": "/buri/(.*)",
+      "destination": "/public/buri-master/$1"
     },
     {
-      "src": "/foody/(.*)",
-      "dest": "/public/foody-master/$1"
+      "source": "/flatter",
+      "destination": "/public/flatter-master/index.html"
     },
     {
-      "src": "/kusina/(.*)",
-      "dest": "/public/kusina-master/$1"
+      "source": "/flatter/(.*)",
+      "destination": "/public/flatter-master/$1"
     },
     {
-      "src": "/tasteit/(.*)",
-      "dest": "/public/tasteit-master/$1"
+      "source": "/foody",
+      "destination": "/public/foody-master/index.html"
     },
     {
-      "src": "/buri",
-      "dest": "/public/buri-master/index.html"
+      "source": "/foody/(.*)",
+      "destination": "/public/foody-master/$1"
     },
     {
-      "src": "/flatter",
-      "dest": "/public/flatter-master/index.html"
+      "source": "/kusina",
+      "destination": "/public/kusina-master/index.html"
     },
     {
-      "src": "/foody",
-      "dest": "/public/foody-master/index.html"
+      "source": "/kusina/(.*)",
+      "destination": "/public/kusina-master/$1"
     },
     {
-      "src": "/kusina",
-      "dest": "/public/kusina-master/index.html"
+      "source": "/tasteit",
+      "destination": "/public/tasteit-master/index.html"
     },
     {
-      "src": "/tasteit",
-      "dest": "/public/tasteit-master/index.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/server.js"
+      "source": "/tasteit/(.*)",
+      "destination": "/public/tasteit-master/$1"
     }
   ]
 } 
