@@ -6,17 +6,17 @@
 
 ```
 5-to-1/
-├── buri-master/          # Buri 餐廳模板
-├── flatter-master/       # Flatter 餐廳模板  
-├── foody-master/         # Foody 餐廳模板
-├── kusina-master/        # Kusina 餐廳模板
-├── tasteit-master/       # Tasteit 餐廳模板
-├── public/               # 靜態資源資料夾
-│   └── favicon.ico       # 網站圖標
-├── server.js             # 主伺服器文件
-├── package.json          # 項目依賴配置
-├── vercel.json           # Vercel 部署配置
-└── README.md            # 項目說明文件
+├── public/
+│   ├── buri-master/          # Buri 餐廳模板
+│   ├── flatter-master/       # Flatter 餐廳模板  
+│   ├── foody-master/         # Foody 餐廳模板
+│   ├── kusina-master/        # Kusina 餐廳模板
+│   └── tasteit-master/       # Tasteit 餐廳模板
+├── server.js                 # 主伺服器文件
+├── package.json              # 項目依賴配置
+├── vercel.json              # Vercel部署配置
+├── .gitignore               # Git忽略文件
+└── README.md                # 項目說明文件
 ```
 
 ## 🚀 快速開始
@@ -86,23 +86,39 @@ npm run dev
 ## 🚀 Vercel 部署
 
 ### 自動部署
-1. 將代碼推送到 GitHub
-2. 在 Vercel 中連接 GitHub 倉庫
-3. Vercel 會自動檢測並部署
+
+1. **安裝 Vercel CLI**:
+   ```bash
+   npm i -g vercel
+   ```
+
+2. **登入 Vercel**:
+   ```bash
+   vercel login
+   ```
+
+3. **部署項目**:
+   ```bash
+   vercel
+   ```
+
+4. **生產環境部署**:
+   ```bash
+   vercel --prod
+   ```
 
 ### 手動部署
-```bash
-# 安裝 Vercel CLI
-npm i -g vercel
 
-# 部署
-vercel
-```
+1. 將代碼推送到 GitHub
+2. 在 Vercel 控制台連接 GitHub 倉庫
+3. 選擇項目並部署
 
 ### 部署配置
-- `vercel.json` 文件已配置好路由規則
-- 自動處理 favicon.ico 請求
-- 優化了靜態文件服務
+
+項目已包含 `vercel.json` 配置文件，自動處理：
+- 路由重寫規則
+- 靜態文件服務
+- Node.js 運行環境
 
 ## 📝 自定義配置
 

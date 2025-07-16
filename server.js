@@ -5,19 +5,11 @@ const app = express();
 const PORT = process.env.PORT || 3009;
 
 // 设置静态文件中间件，为每个模板文件夹配置不同的路由
-app.use('/buri', express.static(path.join(__dirname, 'buri-master')));
-app.use('/flatter', express.static(path.join(__dirname, 'flatter-master')));
-app.use('/foody', express.static(path.join(__dirname, 'foody-master')));
-app.use('/kusina', express.static(path.join(__dirname, 'kusina-master')));
-app.use('/tasteit', express.static(path.join(__dirname, 'tasteit-master')));
-
-// 处理 favicon.ico 请求
-app.get('/favicon.ico', (req, res) => {
-    res.status(204).end(); // 返回无内容状态码
-});
-
-// 设置 public 文件夹为静态资源目录
-app.use(express.static(path.join(__dirname, 'public')));
+app.use('/buri', express.static(path.join(__dirname, 'public/buri-master')));
+app.use('/flatter', express.static(path.join(__dirname, 'public/flatter-master')));
+app.use('/foody', express.static(path.join(__dirname, 'public/foody-master')));
+app.use('/kusina', express.static(path.join(__dirname, 'public/kusina-master')));
+app.use('/tasteit', express.static(path.join(__dirname, 'public/tasteit-master')));
 
 // 主页路由，显示所有可用的模板
 app.get('/', (req, res) => {

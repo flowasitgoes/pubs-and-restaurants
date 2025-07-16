@@ -8,37 +8,48 @@
   ],
   "routes": [
     {
-      "src": "/favicon.ico",
-      "dest": "/favicon.ico"
-    },
-    {
       "src": "/buri/(.*)",
-      "dest": "/buri/$1"
+      "dest": "/public/buri-master/$1"
     },
     {
       "src": "/flatter/(.*)",
-      "dest": "/flatter/$1"
+      "dest": "/public/flatter-master/$1"
     },
     {
       "src": "/foody/(.*)",
-      "dest": "/foody/$1"
+      "dest": "/public/foody-master/$1"
     },
     {
       "src": "/kusina/(.*)",
-      "dest": "/kusina/$1"
+      "dest": "/public/kusina-master/$1"
     },
     {
       "src": "/tasteit/(.*)",
-      "dest": "/tasteit/$1"
+      "dest": "/public/tasteit-master/$1"
+    },
+    {
+      "src": "/buri",
+      "dest": "/public/buri-master/index.html"
+    },
+    {
+      "src": "/flatter",
+      "dest": "/public/flatter-master/index.html"
+    },
+    {
+      "src": "/foody",
+      "dest": "/public/foody-master/index.html"
+    },
+    {
+      "src": "/kusina",
+      "dest": "/public/kusina-master/index.html"
+    },
+    {
+      "src": "/tasteit",
+      "dest": "/public/tasteit-master/index.html"
     },
     {
       "src": "/(.*)",
       "dest": "/server.js"
     }
-  ],
-  "functions": {
-    "server.js": {
-      "maxDuration": 30
-    }
-  }
+  ]
 } 
