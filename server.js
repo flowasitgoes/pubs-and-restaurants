@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
                 background: white;
                 border-radius: 15px;
                 padding: 30px;
-                margin-top: 200px;
+                margin-top: 20px;
                 box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             }
             h1 {
